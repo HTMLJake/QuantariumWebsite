@@ -18,10 +18,7 @@ var prevSelection;
 
 function SidebarSelection(item) {
     if(prevSelection) {
-        if(prevSelection === item) {
-            item.classList.toggle("selected");
-            prevSelection = undefined;
-        } else {
+        if(prevSelection !== item) {
             prevSelection.classList.toggle("selected");
             item.classList.toggle("selected");
             prevSelection = item;
@@ -29,6 +26,5 @@ function SidebarSelection(item) {
     } else {
         item.classList.toggle("selected");
         prevSelection = item;
-        toggleSidebar()
     }
 }
